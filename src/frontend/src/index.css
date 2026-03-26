@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BricolageGrotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+    /* Dark navy theme - always dark */
+    --background: 0.138 0.026 252;
+    --foreground: 0.932 0.018 245;
+    --card: 0.215 0.036 248;
+    --card-foreground: 0.932 0.018 245;
+    --popover: 0.215 0.036 248;
+    --popover-foreground: 0.932 0.018 245;
+    --primary: 0.785 0.115 187;
+    --primary-foreground: 0.138 0.026 252;
+    --secondary: 0.3 0.045 245;
+    --secondary-foreground: 0.932 0.018 245;
+    --muted: 0.3 0.045 245;
+    --muted-foreground: 0.657 0.038 242;
+    --accent: 0.3 0.045 245;
+    --accent-foreground: 0.932 0.018 245;
+    --destructive: 0.63 0.22 29;
+    --destructive-foreground: 0.932 0.018 245;
+    --border: 0.3 0.045 245;
+    --input: 0.19 0.03 247;
+    --ring: 0.785 0.115 187;
+    --chart-1: 0.785 0.115 187;
+    --chart-2: 0.63 0.22 29;
+    --chart-3: 0.832 0.14 82;
+    --chart-4: 0.77 0.148 163;
+    --chart-5: 0.657 0.038 242;
+    --sidebar: 0.175 0.03 250;
+    --sidebar-foreground: 0.932 0.018 245;
+    --sidebar-primary: 0.785 0.115 187;
+    --sidebar-primary-foreground: 0.138 0.026 252;
+    --sidebar-accent: 0.3 0.045 245;
+    --sidebar-accent-foreground: 0.932 0.018 245;
+    --sidebar-border: 0.3 0.045 245;
+    --sidebar-ring: 0.785 0.115 187;
+    /* Named semantic extras */
+    --teal: 0.785 0.115 187;
+    --success: 0.77 0.148 163;
+    --warning: 0.832 0.14 82;
+    --danger: 0.63 0.22 29;
+    --navy-deep: 0.138 0.026 252;
+    --navy-card: 0.215 0.036 248;
+    --navy-border: 0.3 0.045 245;
+    --navy-input: 0.19 0.03 247;
+    --text-primary: 0.932 0.018 245;
+    --text-muted: 0.657 0.038 242;
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "GeneralSans", "Segoe UI", sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(var(--navy-card));
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(var(--navy-border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(var(--muted-foreground));
+}
+
+/* Dark input overrides */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
